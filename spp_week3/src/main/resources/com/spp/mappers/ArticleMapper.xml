@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spp.dao.ArticleDao">
+
+	<resultMap type="Article" id="ArticleResult">
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+		<result property="publicDate" column="publicDate"/>
+		<result property="typeId" column="typeId"/>
+	</resultMap>
+	
+	<select id="list"  resultMap="ArticleResult">
+		select * from article
+	</select>
+
+	<insert id="save" parameterType="Article" >
+		insert into article values(null,#{title},#{content},#{publicDate},#{typeId})
+	</insert>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from article where id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="Article">
+		update article set title=#{title},content=#{content},publicDate=#{publicDate},typeId=#{typeId} where id=#{id}
+	</update>
+	
+	<select id="findById" parameterType="Integer" resultMap="ArticleResult">
+		select * from article where id=#{id}
+	</select>
+	
+	<select id="findInOneMonth" parameterType="String" resultMap="ArticleResult">
+		select * from article where publicDate>#{date}
+	</select>
+</mapper> 

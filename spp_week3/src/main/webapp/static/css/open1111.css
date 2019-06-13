@@ -1,0 +1,18 @@
+body{
+	padding: 0px;
+	margin: 0px;
+	font:12px Verdana,Arial,Tahoma;
+	line-height: 25px;
+}
+
+.navbar{
+	width: 960px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+.table{
+	width: 960px;
+	margin: 0px auto;
+	overflow: hidden;
+}
