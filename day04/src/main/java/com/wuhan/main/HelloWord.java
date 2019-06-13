@@ -6,6 +6,7 @@ public class HelloWord {
 		
 		System.out.println("helloWord");
 		
+		System.out.println("我修改了代码");
 	}
 
 }
